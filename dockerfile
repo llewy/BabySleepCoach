@@ -10,8 +10,8 @@ COPY . .
 
 # Install required packages
 RUN apt-get update && apt-get install python3-pip libgl1 libglib2.0-0  -y
-RUN pip3 install --upgrade pip
-RUN pip3 install -r requirements.txt
+RUN pip3 install --upgrade pip --break-system-packages
+RUN pip3 install -r requirements.txt --break-system-packages
 
 RUN cd webapp && yarn install
 
